@@ -1,0 +1,21 @@
+@import "layout.rasi"
+listview {
+  padding      : 4px 4px;
+  lines        : 4;
+  columns      : 3;
+  scrollbar    : false;
+  fixed-height : false;
+  dynamic      : true;
+}
+element {
+    orientation: vertical;
+    children: [ element-icon, element-text ];
+    spacing: 10px;
+}
+
+element-icon {
+    size: 48px;
+    horizontal-align: 0.5;
+}
+
+

@@ -1,0 +1,9 @@
+@import "layout.rasi"
+listview {
+  padding      : 4px 4px;
+  lines        : 1;
+  columns      : 4;
+  scrollbar    : false;
+  fixed-height : true;
+  dynamic      : true;
+}
