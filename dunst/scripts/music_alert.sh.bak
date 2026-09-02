@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+playerctl --player=spotify,mpd,vlc \
+  --follow \
+  metadata \
+  --format '{{status}}|{{title}} - {{artist}}' 2>/dev/null |
+  while IFS='|' read -r status track; do
+    [[ "$status" == "Playing" ]] || continue
+
+    notify-send -a "Music Player" \
+      -i audio-x-generic \
+      "Now Playing" \
+      "$track"
+  done
