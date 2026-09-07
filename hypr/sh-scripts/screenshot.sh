@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Pilihan mode untuk Rofi
+# Chose Menu
 CHOSEN=$(printf " Fullscreen\n Window\n󰒅 Region" |
   rofi -dmenu -i \
     -mesg "Screenshot Mode" \
@@ -44,7 +44,7 @@ CHOSEN=$(printf " Fullscreen\n Window\n󰒅 Region" |
         }
 ')
 
-# Eksekusi Hyprshot berdasarkan pilihan
+# Execute
 case "$CHOSEN" in
 *Output)
   hyprshot -m output
