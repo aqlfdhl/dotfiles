@@ -11,4 +11,4 @@ alias ff='fastfetch'
 alias zz='zsh'
 PS1='\W \$ '
 #PS1='[\u@\h \W]\$ '
-export PATH=$PATH:/home/fadhil/.spicetify
+export PATH=$PATH:~/.spicetify
