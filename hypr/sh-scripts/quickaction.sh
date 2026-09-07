@@ -1,11 +1,11 @@
 #!/bin/bash
-# Daftar opsi menu
+# Menu Option list
 options=" Lock\n󰍃 Logout\n Sleep\n Reboot\n Shutdown"
 
-# Ambil uptime
+# Uptime
 UPTIME="󰅐 $(uptime -p | sed 's/up //')"
 
-# Menampilkan menu dan mengambil pilihan pengguna
+# Show menu and pick options
 CHOSEN=$(echo -e "$options" |
   rofi -dmenu -i \
     -p "Quick Action:" \
@@ -43,7 +43,7 @@ CHOSEN=$(echo -e "$options" |
             horizontal-align: 0.5;
         }
 ')
-# Eksekusi aksi berdasarkan pilihan
+# Execute
 case $CHOSEN in
 " Lock")
   hyprlock
