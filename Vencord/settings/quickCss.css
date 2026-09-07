@@ -1,0 +1,211 @@
+/**
+ * @name system24
+ * @description a tui-style discord theme.
+ * @author refact0r
+ * @version 2.1.0
+ * @invite nz87hXyvcy
+ * @website https://github.com/refact0r/system24
+ * @source https://github.com/refact0r/system24/blob/master/theme/system24.theme.css
+ * @authorId 508863359777505290
+ * @authorLink https://www.refact0r.dev
+*/
+
+/* ============================================================
+   IMPORTS
+   ============================================================ */
+@import url('https://refact0r.github.io/system24/build/system24.css');
+
+
+/* ============================================================
+   LAYOUT & TYPOGRAPHY
+   ============================================================ */
+body {
+    --font: '';
+    --code-font: '';
+    font-weight: 300;
+    letter-spacing: -0.05ch;
+}
+
+
+/* ============================================================
+   SIZING & SPACING
+   ============================================================ */
+body {
+    --gap: 12px;
+    --divider-thickness: 4px;
+    --border-thickness: 2px;
+    --border-hover-transition: 0.2s ease;
+}
+
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+body {
+    --animations: on;
+    --list-item-transition: 0.2s ease;
+    --dms-icon-svg-transition: 0.4s ease;
+}
+
+
+/* ============================================================
+   TOP BAR
+   ============================================================ */
+body {
+    --top-bar-height: var(--gap);
+    --top-bar-button-position: titlebar;
+    --top-bar-title-position: off;
+    --subtle-top-bar-title: off;
+}
+
+
+/* ============================================================
+   WINDOW CONTROLS
+   ============================================================ */
+body {
+    --custom-window-controls: off;
+    --window-control-size: 14px;
+}
+
+
+/* ============================================================
+   DMS BUTTON
+   ============================================================ */
+body {
+    --custom-dms-icon: off;
+    --dms-icon-svg-url: url('');
+    --dms-icon-svg-size: 90%;
+    --dms-icon-color-before: var(--icon-subtle);
+    --dms-icon-color-after: var(--white);
+    --custom-dms-background: off;
+    --dms-background-image-url: url('');
+    --dms-background-image-size: cover;
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--gray-2), var(--red-2));
+}
+
+
+/* ============================================================
+   BACKGROUND IMAGE
+   ============================================================ */
+body {
+    --background-image: off;
+    --background-image-url: url('');
+}
+
+
+/* ============================================================
+   TRANSPARENCY & BLUR
+   NOTE: bg colors use oklch with alpha for transparency.
+         Set --remove-bg-layer: on if using window-level transparency.
+   ============================================================ */
+body {
+    --transparency-tweaks: on;
+    --remove-bg-layer: on;
+    --panel-blur: on;
+    --blur-amount: 12px;
+    --bg-floating: var(--bg-3);
+}
+
+
+/* ============================================================
+   MISC UI OPTIONS
+   ============================================================ */
+body {
+    --small-user-panel: on;
+    --unrounding: on;
+    --round-pfp: on;
+    --remove-pfp-decor: off;
+    --custom-spotify-bar: on;
+    --ascii-titles: on;
+    --ascii-loader: system24;
+    --panel-labels: on;
+    --label-color: var(--text-muted);
+    --label-font-weight: 500;
+}
+
+
+/* ============================================================
+   COLOR TOKENS
+   ============================================================ */
+:root {
+    --colors: on;
+
+    /* --- Text --- */
+    --text-0: var(--bg-4);
+    --text-1: oklch(95% 0 0);
+    --text-2: oklch(85% 0 0);
+    --text-3: oklch(75% 0 0);
+    --text-4: oklch(60% 0 0);
+    --text-5: oklch(40% 0 0);
+
+    /* --- Backgrounds (darker + transparent) --- */
+    --bg-1: oklch(22% 0 0 / 0.75);
+    --bg-2: oklch(18% 0 0 / 0.75);
+    --bg-3: oklch(15% 0 0 / 1);
+    --bg-4: oklch(12% 0 0 / 0.75);
+
+    /* --- Interactive states --- */
+    --hover:         oklch(54% 0 0 / 0.10);
+    --active:        oklch(54% 0 0 / 0.20);
+    --active-2:      oklch(54% 0 0 / 0.30);
+    --message-hover: var(--hover);
+
+    /* --- Accent (gray) --- */
+    --accent-1:   var(--gray-1);
+    --accent-2:   var(--gray-2);
+    --accent-3:   var(--gray-3);
+    --accent-4:   var(--gray-4);
+    --accent-5:   var(--gray-5);
+    --accent-new: var(--red-2);
+
+    /* --- Mention & reply gradients --- */
+    --mention:       linear-gradient(to right, color-mix(in oklch, var(--accent-2), transparent 90%) 40%, transparent);
+    --mention-hover: linear-gradient(to right, color-mix(in oklch, var(--accent-2), transparent 95%) 40%, transparent);
+    --reply:         linear-gradient(to right, color-mix(in oklch, var(--text-3),   transparent 90%) 40%, transparent);
+    --reply-hover:   linear-gradient(to right, color-mix(in oklch, var(--text-3),   transparent 95%) 40%, transparent);
+
+    /* --- Status indicators --- */
+    --online:    var(--green-2);
+    --dnd:       var(--red-2);
+    --idle:      var(--yellow-2);
+    --streaming: var(--gray-2);
+    --offline:   var(--text-4);
+
+    /* --- Borders --- */
+    --border-light:  var(--hover);
+    --border:        var(--active);
+    --border-hover:  var(--accent-2);
+    --button-border: oklch(100% 0 0 / 0.10);
+
+    /* --- Base palette --- */
+    --red-1: oklch(75% 0.13   0);
+    --red-2: oklch(70% 0.13   0);
+    --red-3: oklch(65% 0.13   0);
+    --red-4: oklch(60% 0.13   0);
+    --red-5: oklch(55% 0.13   0);
+
+    --green-1: oklch(75% 0.12 170);
+    --green-2: oklch(70% 0.12 170);
+    --green-3: oklch(65% 0.12 170);
+    --green-4: oklch(60% 0.12 170);
+    --green-5: oklch(55% 0.12 160);
+
+    --blue-1: oklch(75% 0.11 215);
+    --blue-2: oklch(70% 0.11 215);
+    --blue-3: oklch(65% 0.11 215);
+    --blue-4: oklch(60% 0.11 215);
+    --blue-5: oklch(55% 0.11 215);
+
+    --yellow-1: oklch(80% 0.12 90);
+    --yellow-2: oklch(75% 0.12 90);
+    --yellow-3: oklch(70% 0.12 90);
+    --yellow-4: oklch(65% 0.12 90);
+    --yellow-5: oklch(60% 0.12 90);
+
+    /* --- Gray accent scale (replaces purple) --- */
+    --gray-1: oklch(72% 0 0);
+    --gray-2: oklch(65% 0 0);
+    --gray-3: oklch(58% 0 0);
+    --gray-4: oklch(50% 0 0);
+    --gray-5: oklch(43% 0 0);
+}
